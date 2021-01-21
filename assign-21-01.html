@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+
+<body border:1px>
+<form action="/action_page.php">
+  <label for="fname">User name:</label><br>
+  <input type="text" id="fname" name="fname" placeholder="enter your user name" required><br>
+  <label for="lname">Password:</label><br>
+  <input type="password" id="lname" name="lname" placeholder="enter your password" required><br><br>
+  <input type="submit" value="Submit">
+</form> </body><br>
+<div>
+<form>
+<table style="border:1px solid black;background-color:gray">
+<tr><td>Name:<td><input type="text" name="t5" required/></tr>
+<tr><td>Course interested:<td><input type="checkbox" name="t1" >PHP<td><input type="checkbox" name="t2" >DW<br></tr>
+                       <tr><td>  <td> <input type="checkbox" name="t3" >Mainframes<td><input type="checkbox" name="t4" >Testing</tr>
+
+<tr><td>Need placement?<td><input type="radio" name="t6" value="yes">yes<td><input type="radio" name="t6" value="no" >no</tr>
+<tr><td>Education<td><select id="edu"><option>Diploma</option><option>B.tech</option><option>M.tech</option></select></tr>
+<tr><td>Where do hear this site ?<td><select id="edu"><option>newspaper</option><option>friends</option><option>socialmedia</option></select></tr>
+<tr><td>Comments:<td><textarea name="t8" rows="4" cols="50"></textarea></tr>
+<tr><td><td><button value="submit">submit</button><button value="submit">reset</button><button value="submit">button</button></tr>
+</table>
+</form>
+</div><br>
+<button onclick="getLocation()">Try It</button>
+
+<p id="demo"></p>
+
+<script>
+var x = document.getElementById("demo");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
+</script>
+
+
+</div>
+</body>
+</html>
